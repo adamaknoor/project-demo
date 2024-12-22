@@ -40,7 +40,7 @@ services:
       context: ./DevopsClassFront
     restart: always
     ports:
-      - "82:80"
+      - "81:80"
     networks:
       - mynetwork  
     volumes:
