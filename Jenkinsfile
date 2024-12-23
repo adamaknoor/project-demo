@@ -6,12 +6,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                
+                    sh 'sudo su -'
+                    sh 'apt-get update'
+                    sh 'apt-get upgrade -y'
+                    sh 'sudo apt-get update'
                     sh '''
-                    sudo su -
-                    apt-get update
-                    apt-get upgrade -y
-                    sudo apt-get update
-                       
                         docker compose version
                         '''
                     
