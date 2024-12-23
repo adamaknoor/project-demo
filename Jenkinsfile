@@ -6,8 +6,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'sudo apt-get update'
+                    sh 'apt-get update'
                     sh 'apt-get upgrade -y'
+                    sh 'sudo apt-get update'
 
                     sh '''
                        
