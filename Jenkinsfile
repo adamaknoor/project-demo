@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'apt-get update'
+                    sh 'sudo apt-get update'
                     sh 'apt-get upgrade -y'
 
                     sh '''
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
 
-                    sh 'apt-get update'
+                    sh 'sudo apt-get update'
                     sh 'apt-get upgrade -y'
                     sh '''
                         docker compose version
