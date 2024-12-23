@@ -24,6 +24,7 @@ pipeline {
 
                     sh 'sudo apt-get update'
                     sh 'apt-get upgrade -y'
+                    sh 'sudo apt-get update'
                     sh '''
                         docker compose version
                         docker compose up -d
