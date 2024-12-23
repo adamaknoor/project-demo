@@ -3,6 +3,11 @@ pipeline {
     
     stages {
 
+        stage('Checkout SCM') {
+            steps {
+                git branch: 'main', url: 'https://github.com/adamaknoor/project-demo.git'
+            }
+
         stage('Build') {
             steps {
                 script {
