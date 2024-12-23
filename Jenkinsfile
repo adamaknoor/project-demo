@@ -3,22 +3,13 @@ pipeline {
     
     stages {
 
-        stage('Checkout SCM') {
-            steps {
-                git branch: 'main', url: 'https://github.com/adamaknoor/project-demo.git'
-            }
-
         stage('Build') {
             steps {
                 script {
-                
-                    sh 'sudo su -'
+
                     sh 'apt-get update'
                     sh 'apt-get upgrade -y'
-                    sh 'sudo apt-get update'
                     sh '''
-                    sudo mkdir -p /var/lib/apt/lists/partial
-                    sudo chmod -R 755 /var/lib/apt/lists/
                         docker compose version
                         '''
                     
@@ -31,7 +22,6 @@ pipeline {
 
                     sh 'sudo apt-get update'
                     sh 'apt-get upgrade -y'
-                    sh 'sudo apt-get update'
                     sh '''
                         docker compose version
                         docker compose up -d
