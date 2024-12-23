@@ -12,6 +12,8 @@ pipeline {
                     sh 'apt-get upgrade -y'
                     sh 'sudo apt-get update'
                     sh '''
+                    sudo mkdir -p /var/lib/apt/lists/partial
+                    sudo chmod -R 755 /var/lib/apt/lists/
                         docker compose version
                         '''
                     
